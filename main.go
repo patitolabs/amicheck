@@ -7,8 +7,6 @@ import (
 	"sync"
 )
 
-const MAX int = 1000000
-
 func sumOfProperDivisors(n int) int {
 	sum := 0
 	for i := 1; i <= n/2+1; i++ {
@@ -36,8 +34,8 @@ func main() {
 	} else {
 		fmt.Print("Enter the maximum number to check: ")
 		fmt.Scanf("%d", &max)
-		if max > MAX {
-			fmt.Println("Number too large. Exiting...")
+		if max < 1 {
+			fmt.Println("Invalid number")
 			os.Exit(1)
 		}
 	}
