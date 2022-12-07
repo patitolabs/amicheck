@@ -28,14 +28,16 @@ func amicable(n int, wg *sync.WaitGroup) {
 }
 
 func main() {
+	fmt.Println("amicheck - A concurrent amicable number checker")
+
 	var max int
 	if len(os.Args) > 1 {
 		max, _ = strconv.Atoi(os.Args[1])
 	} else {
-		fmt.Print("Enter a number: ")
+		fmt.Print("Enter the maximum number to check: ")
 		fmt.Scanf("%d", &max)
 		if max > MAX {
-			fmt.Println("Number too large exiting...")
+			fmt.Println("Number too large. Exiting...")
 			os.Exit(1)
 		}
 	}
